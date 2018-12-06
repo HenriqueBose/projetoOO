@@ -10,9 +10,13 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import projeto.oo.Formulario;
 import projeto.oo.PerguntaAlternativa;
+import projeto.oo.PerguntaExclusiva;
 import projeto.oo.PerguntaLista;
+import projeto.oo.excecoes.AlternativasNaoInformadasException;
+import projeto.oo.excecoes.EnunciadoNaoInformadoException;
 
 /**
  *
@@ -43,7 +47,6 @@ public class JF_PerguntaLista extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         textAlternativa1 = new javax.swing.JTextField();
         textAlternativa2 = new javax.swing.JTextField();
-        textAlternativa3 = new javax.swing.JTextField();
         textAlternativa4 = new javax.swing.JTextField();
         textAlternativa5 = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
@@ -51,6 +54,7 @@ public class JF_PerguntaLista extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        textAlternativa3 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -68,12 +72,27 @@ public class JF_PerguntaLista extends javax.swing.JFrame {
             }
         });
 
+<<<<<<< HEAD
+        textAlternativa1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textAlternativa1ActionPerformed(evt);
+            }
+        });
+
+        textAlternativa2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textAlternativa2ActionPerformed(evt);
+            }
+        });
+
         textAlternativa3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 textAlternativa3ActionPerformed(evt);
             }
         });
 
+=======
+>>>>>>> 2a59f57fd229cdb9c9254e2d51abe62a77685551
         jLabel2.setText("A");
 
         jLabel3.setText("B");
@@ -110,9 +129,9 @@ public class JF_PerguntaLista extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(textAlternativa1)
                             .addComponent(textAlternativa2)
-                            .addComponent(textAlternativa3)
                             .addComponent(textAlternativa4)
-                            .addComponent(textAlternativa5))))
+                            .addComponent(textAlternativa5)
+                            .addComponent(textAlternativa3, javax.swing.GroupLayout.Alignment.TRAILING))))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -132,8 +151,8 @@ public class JF_PerguntaLista extends javax.swing.JFrame {
                     .addComponent(jLabel3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(textAlternativa3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
+                    .addComponent(jLabel4)
+                    .addComponent(textAlternativa3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(textAlternativa4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -163,8 +182,32 @@ public class JF_PerguntaLista extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
     PerguntaLista pL;
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        
-         pL = new PerguntaLista();
+        pL = new PerguntaLista();
+         
+         
+           if (textEnunciado.getText().equals("")) {
+            try {
+                throw new EnunciadoNaoInformadoException("Enunciado não pode estar vazio!");
+
+            } catch (EnunciadoNaoInformadoException ex) {
+
+                Logger.getLogger(JF_PerguntaLista.class.getName()).log(Level.SEVERE, null, ex);
+                JOptionPane.showMessageDialog(this, ex, "Aviso", JOptionPane.WARNING_MESSAGE);
+            }
+        } else if
+                (textAlternativa1.getText().equals("") && textAlternativa2.getText().equals("")
+                && textAlternativa3.getText().equals("") && textAlternativa4.getText().equals("")
+                && textAlternativa5.getText().equals("")) {
+            
+
+            try {
+                throw new AlternativasNaoInformadasException("Alternativas não informadas!");
+            } catch (AlternativasNaoInformadasException ex) {
+                Logger.getLogger(JF_PerguntaLista.class.getName()).log(Level.SEVERE, null, ex);
+                 JOptionPane.showMessageDialog(this, ex, "Aviso", JOptionPane.WARNING_MESSAGE);
+            }
+
+        }else{
          
          
         
@@ -172,13 +215,14 @@ public class JF_PerguntaLista extends javax.swing.JFrame {
            Formulario form = Formulario.getInstance();
            FileWriter save = new FileWriter("formularios/"+form.getNomeFormulario()+".txt",true);
            PrintWriter pw = new PrintWriter(save);
+           pw.println(pL.getTipo());
            pw.println(textEnunciado.getText());
            pL.addAlternativa(textAlternativa1.getText());
            pL.addAlternativa(textAlternativa2.getText());
            pL.addAlternativa(textAlternativa3.getText());
            pL.addAlternativa(textAlternativa4.getText());
            pL.addAlternativa(textAlternativa5.getText());
-           pw.println(pL.getTipo());
+           
            pw.println(textAlternativa1.getText());
            pw.println(textAlternativa2.getText());
            pw.println(textAlternativa3.getText());
@@ -186,8 +230,8 @@ public class JF_PerguntaLista extends javax.swing.JFrame {
            pw.println(textAlternativa5.getText());
            pw.println(";");
            pw.flush();
-          // pw.close();
-          // save.close();
+           pw.close();
+           save.close();
           
            
        } catch (IOException ex) {
@@ -202,15 +246,25 @@ public class JF_PerguntaLista extends javax.swing.JFrame {
         dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
+<<<<<<< HEAD
     private void textAlternativa3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textAlternativa3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_textAlternativa3ActionPerformed
 
+    private void textAlternativa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textAlternativa1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textAlternativa1ActionPerformed
+
+    private void textAlternativa2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textAlternativa2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textAlternativa2ActionPerformed
+
+=======
+>>>>>>> 2a59f57fd229cdb9c9254e2d51abe62a77685551
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
+  
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 

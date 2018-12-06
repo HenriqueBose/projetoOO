@@ -209,13 +209,14 @@ public class JF_PerguntaAlternativa extends javax.swing.JFrame {
            Formulario form = Formulario.getInstance();
            FileWriter save = new FileWriter("formularios/"+form.getNomeFormulario()+".txt",true);
            PrintWriter pw = new PrintWriter(save);
+           pw.println(pMA.getTipo());
            pw.println(textEnunciado.getText());
            pMA.addAlternativa(textAlternativa1.getText());
            pMA.addAlternativa(textAlternativa2.getText());
            pMA.addAlternativa(textAlternativa3.getText());
            pMA.addAlternativa(textAlternativa4.getText());
            pMA.addAlternativa(textAlternativa5.getText());
-           pw.println(pMA.getTipo());
+          
            pw.println(textAlternativa1.getText());
            pw.println(textAlternativa2.getText());
            pw.println(textAlternativa3.getText());

@@ -136,9 +136,10 @@ public class JF_PerguntaAberta extends javax.swing.JFrame {
            Formulario form = Formulario.getInstance();
            FileWriter save = new FileWriter("formularios/"+form.getNomeFormulario()+".txt",true);
            PrintWriter pw = new PrintWriter(save);
+           pw.println(p.getTipo());
            pw.println(Enunciado.getText());
            p.setEnunciado(Enunciado.getText());
-           pw.println(p.getTipo());
+           
            pw.println(";");
            pw.flush();
            pw.close();

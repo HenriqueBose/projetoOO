@@ -241,13 +241,14 @@ public class JF_PerguntaExclusiva extends javax.swing.JFrame {
            Formulario form = Formulario.getInstance();
            FileWriter save = new FileWriter("formularios/"+form.getNomeFormulario()+".txt",true);
            PrintWriter pw = new PrintWriter(save);
+           pw.println(pA.getTipo());
            pw.println(textEnunciado.getText());
            pA.addAlternativa(textAlternativa1.getText());
            pA.addAlternativa(textAlternativa2.getText());
            pA.addAlternativa(textAlternativa3.getText());
            pA.addAlternativa(textAlternativa4.getText());
            pA.addAlternativa(textAlternativa5.getText());
-           pw.println(pA.getTipo());
+          
            pw.println(textAlternativa1.getText());
            pw.println(textAlternativa2.getText());
            pw.println(textAlternativa3.getText());
