@@ -71,9 +71,9 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="textAlternativa1" max="32767" attributes="0"/>
                               <Component id="textAlternativa2" max="32767" attributes="0"/>
-                              <Component id="textAlternativa3" alignment="0" max="32767" attributes="0"/>
                               <Component id="textAlternativa4" alignment="0" max="32767" attributes="0"/>
                               <Component id="textAlternativa5" alignment="0" max="32767" attributes="0"/>
+                              <Component id="textAlternativa3" alignment="1" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -100,8 +100,8 @@
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="textAlternativa3" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="textAlternativa3" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -152,11 +152,6 @@
         </Component>
         <Component class="javax.swing.JTextField" name="textAlternativa2">
         </Component>
-        <Component class="javax.swing.JTextField" name="textAlternativa3">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textAlternativa3ActionPerformed"/>
-          </Events>
-        </Component>
         <Component class="javax.swing.JTextField" name="textAlternativa4">
         </Component>
         <Component class="javax.swing.JTextField" name="textAlternativa5">
@@ -185,6 +180,8 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="E"/>
           </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="textAlternativa3">
         </Component>
       </SubComponents>
     </Container>

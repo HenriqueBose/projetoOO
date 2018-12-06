@@ -10,8 +10,10 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import projeto.oo.Formulario;
 import projeto.oo.PerguntaOpcional;
+import projeto.oo.excecoes.EnunciadoNaoInformadoException;
 
 /**
  *
@@ -121,8 +123,19 @@ public class JF_PerguntaOpcional extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
         PerguntaOpcional pB;
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        pB = new PerguntaOpcional();
+         pB = new PerguntaOpcional();
+        if (textEnunciado.getText().equals("")) {
+            try {
+                throw new EnunciadoNaoInformadoException("Enunciado não pode estar vazio!");
+
+            } 
         
+            catch (EnunciadoNaoInformadoException ex) {
+
+                Logger.getLogger(JF_PerguntaLista.class.getName()).log(Level.SEVERE, null, ex);
+                JOptionPane.showMessageDialog(this, ex, "Aviso", JOptionPane.WARNING_MESSAGE);
+            }
+        }else{
          try {
            Formulario form = Formulario.getInstance();
            FileWriter save = new FileWriter("formularios/"+form.getNomeFormulario()+".txt",true);
@@ -145,7 +158,8 @@ public class JF_PerguntaOpcional extends javax.swing.JFrame {
         
         
         new CriarQuestoes().setVisible(true);
-        dispose();        // TODO add your handling code here:
+        dispose();  
+        }// TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
