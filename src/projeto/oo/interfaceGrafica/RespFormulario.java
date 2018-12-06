@@ -5,13 +5,20 @@
  */
 package projeto.oo.interfaceGrafica;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import projeto.oo.Formulario;
+import projeto.oo.PerguntaAberta;
+import projeto.oo.PerguntaAlternativa;
+import projeto.oo.PerguntaExclusiva;
+import projeto.oo.PerguntaLista;
+import projeto.oo.PerguntaOpcional;
 
 /**
  *
@@ -178,11 +185,85 @@ public class RespFormulario extends javax.swing.JFrame {
         // TODO add your handling code here:
        form1 = Formulario.getInstance();
        
-        try {
-            form1.Ler(txtFile.getText());
-        } catch (IOException ex) {
-            Logger.getLogger(RespFormulario.class.getName()).log(Level.SEVERE, null, ex);
-        }
+       //form1.Ler(txtFile.getText());
+       try{
+           String arquivo = txtFile.getText();
+           FileReader isr;
+           isr = new FileReader(arquivo);
+           BufferedReader br =new BufferedReader(isr);
+           String s = br.readLine();
+           form1.setNomeFormulario(s);  //Preencher info basicas do formulario
+           s = br.readLine();
+           form1.setDescricaoFormulario(s);
+           s = br.readLine();
+           form1.setDataInicio(s);
+           s = br.readLine();
+           form1.setDataFim(s);
+           //Agora tem q ler as perguntas
+           s = br.readLine();
+        do{ 
+           if(s=="$".toString()){
+           
+            }else{
+                 switch(Integer.parseInt(s)){ //Estranho esse erro, se s=="$" entao essa parte nao deveria rodar
+                 case 0:    //Pergunta Aberta     
+                     PerguntaAberta p = new PerguntaAberta();
+                     s = br.readLine();
+                     p.setEnunciado(s);
+                     s = br.readLine(); // ; = lixo
+                      form1.addPergunta(p);
+                       break;            
+                 case 1:    //Pergunta Alternativa
+                     PerguntaAlternativa u = new PerguntaAlternativa();
+                     s = br.readLine();
+                     u.setEnunciado(s);
+                        for(int i=0; i < 5; i++){
+                        s = br.readLine();
+                        u.addAlternativa(s);
+                        }
+                     s = br.readLine(); // ; = lixo  
+                      form1.addPergunta(u);
+                       break;
+                 case 2:    //Pergunta Opcional
+                     PerguntaOpcional v = new PerguntaOpcional();
+                     s = br.readLine();
+                     v.setEnunciado(s);
+                     for(int i=0; i < 5; i++){
+                        s = br.readLine();
+                        v.addAlternativa(s);
+                        }
+                     s = br.readLine(); // ; = lixo 
+                      form1.addPergunta(v);
+                       break;
+                 case 3:    //Pergunta Lista
+                     PerguntaLista w = new PerguntaLista();
+                     s = br.readLine();
+                     w.setEnunciado(s);
+                     for(int i=0; i < 5; i++){
+                        s = br.readLine();
+                        w.addAlternativa(s);
+                        }
+                     s = br.readLine(); // ; = lixo 
+                      form1.addPergunta(w);
+                        break;
+                 case 4:    //Pergunta Exclusiva
+                     PerguntaExclusiva x = new PerguntaExclusiva();
+                     s = br.readLine();
+                     x.setEnunciado(s);
+                     for(int i=0; i < 5; i++){
+                        s = br.readLine();
+                        x.addAlternativa(s);
+                        }
+                     s = br.readLine(); // ; = lixo 
+                      form1.addPergunta(x);
+                        break;
+              }//Fim do switch
+            }
+           s = br.readLine();
+        }while(s!="$");
+       }catch (IOException ex) {
+           Logger.getLogger(Formulario.class.getName()).log(Level.SEVERE, null, ex); 
+       }
         
     
         
