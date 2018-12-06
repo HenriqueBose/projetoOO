@@ -97,8 +97,6 @@ public class Formulario {
            pw.println(this.dataFim);//quarta linha: data de termino.
            pw.close();
            //Pegar agora as perguntas seguindo o formato
-           Ler();
-           
            pw.flush();//aramazena todas de uma vez, para nao nada em buffer.
            //pw.close();//fecha a função de escrever.
           // save.close();//fecha o txt para e salva.
@@ -109,10 +107,10 @@ public class Formulario {
        }
         
    }
-        public void Ler() throws FileNotFoundException, IOException{
+        public void Ler(String nomeForm) throws FileNotFoundException, IOException{
             
             try{
-            String arquivo = "formularios/"+this.nomeFormulario+".txt";
+            String arquivo = nomeForm;
             FileReader isr;
                 isr = new FileReader(arquivo);
             BufferedReader br =new BufferedReader(isr);

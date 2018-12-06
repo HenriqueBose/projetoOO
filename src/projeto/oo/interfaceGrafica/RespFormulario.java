@@ -6,8 +6,12 @@
 package projeto.oo.interfaceGrafica;
 
 import java.io.File;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
+import projeto.oo.Formulario;
 
 /**
  *
@@ -21,7 +25,7 @@ public class RespFormulario extends javax.swing.JFrame {
     public RespFormulario() {
         initComponents();
     }
-
+    public Formulario form1;
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -69,6 +73,11 @@ public class RespFormulario extends javax.swing.JFrame {
         });
 
         jButton2.setText("Confirmar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("Voltar");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -164,6 +173,20 @@ public class RespFormulario extends javax.swing.JFrame {
         new Menu().setVisible(true);
         dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+       form1 = Formulario.getInstance();
+       
+        try {
+            form1.Ler(txtFile.getText());
+        } catch (IOException ex) {
+            Logger.getLogger(RespFormulario.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    
+        
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
