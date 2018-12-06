@@ -4,8 +4,15 @@
  * and open the template in the editor.
  */
 package projeto.oo.interfaceGrafica;
+
+import java.text.ParseException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
+import javax.swing.text.MaskFormatter;
 import projeto.oo.Formulario;
+import projeto.oo.excecoes.CamposObrigatoriosNaoInformadosException;
 /**
  *
  * @author Henrique
@@ -16,15 +23,33 @@ public class CriarFormulario extends javax.swing.JFrame {
      * Creates new form CriarFormulario
      */
     public CriarFormulario() {
-        
         initComponents();
+        formatarData1();
+        formatarData2();
     }
     
     public String getTextNome() {
         return textNome.getText();
     }
     
+    private void formatarData1() {
+        try {
+            MaskFormatter mask = new MaskFormatter("##/##/####");
+            mask.install(textInicio);
 
+        } catch (ParseException ex) {
+            JOptionPane.showMessageDialog(null, "Erro ao formatar campo! ", "Erro", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+    private void formatarData2() {
+        try {
+            MaskFormatter mask = new MaskFormatter("##/##/####");
+            mask.install(textFim);
+
+        } catch (ParseException ex) {
+            JOptionPane.showMessageDialog(null, "Erro ao formatar campo! ", "Erro", JOptionPane.ERROR_MESSAGE);
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -207,17 +232,35 @@ public class CriarFormulario extends javax.swing.JFrame {
     }//GEN-LAST:event_textInicioActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        new CriarQuestoes().setVisible(true);
-        dispose(); 
-        
-        form = Formulario.getInstance();
-        form.setNomeFormulario(textNome.getText());
-        form.setDescricaoFormulario(textDescricao.getText());
-        form.setDataInicio(textInicio.getText());
-        form.setDataFim(textFim.getText());
-        
-        form.SalvarInicioForm();
-        
+        try {
+
+            textNome.getText();
+            textDescricao.getText();
+            textInicio.getText();
+            textFim.getText();
+
+            if (textNome.getText().equals("") || textDescricao.getText().equals("")
+                    || textInicio.getText().equals("  /  /    ") || textFim.getText().equals("  /  /    ")) {
+
+                throw new CamposObrigatoriosNaoInformadosException("Campo(s) obrigatório(s) não informado(s)!");
+            } else {
+
+                new CriarQuestoes().setVisible(true);
+                dispose();
+
+                form = Formulario.getInstance();
+                form.setNomeFormulario(textNome.getText());
+                form.setDescricaoFormulario(textDescricao.getText());
+                form.setDataInicio(textInicio.getText());
+                form.setDataFim(textFim.getText());
+
+                form.SalvarInicioForm();
+            }
+        } catch (CamposObrigatoriosNaoInformadosException ex) {
+            Logger.getLogger(CriarFormulario.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(this, ex, "Aviso", JOptionPane.WARNING_MESSAGE);
+        }
+
 // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 

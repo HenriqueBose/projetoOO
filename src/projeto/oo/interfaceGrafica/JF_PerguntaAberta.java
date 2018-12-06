@@ -13,6 +13,7 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import projeto.oo.Pergunta;
 import projeto.oo.PerguntaAberta;
+import projeto.oo.excecoes.EnunciadoNaoInformadoException;
 
 /**
  *
@@ -110,7 +111,25 @@ public class JF_PerguntaAberta extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
         PerguntaAberta p; 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-         p = new PerguntaAberta();
+        p = new PerguntaAberta();
+         
+       
+             
+              if (Enunciado.getText().equals("")){
+             try {
+                 throw new EnunciadoNaoInformadoException("Enunciado não pode estar vazio!");
+                 
+             } catch (EnunciadoNaoInformadoException ex) {
+                 
+                 Logger.getLogger(JF_PerguntaAberta.class.getName()).log(Level.SEVERE, null, ex);
+                 JOptionPane.showMessageDialog(this, ex,"Aviso",JOptionPane.WARNING_MESSAGE);
+                  }
+              }
+              
+              else{
+         
+               
+     
          
          
          try {
@@ -122,8 +141,8 @@ public class JF_PerguntaAberta extends javax.swing.JFrame {
            pw.println(p.getTipo());
            pw.println(";");
            pw.flush();
-          // pw.close();
-          // save.close();
+           pw.close();
+           save.close();
            form.addPergunta(p);
            
        } catch (IOException ex) {
@@ -131,9 +150,9 @@ public class JF_PerguntaAberta extends javax.swing.JFrame {
        }
         
         new CriarQuestoes().setVisible(true);
-        dispose();        // TODO add your handling code here:
-         
-        
+        dispose();       
+              }
+                
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

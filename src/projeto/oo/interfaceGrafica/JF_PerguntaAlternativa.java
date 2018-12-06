@@ -10,10 +10,12 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import projeto.oo.Formulario;
 import projeto.oo.PerguntaAlternativa;
 import projeto.oo.PerguntaExclusiva;
-
+import projeto.oo.excecoes.AlternativasNaoInformadasException;
+import projeto.oo.excecoes.EnunciadoNaoInformadoException;
 /**
  *
  * @author Henrique
@@ -179,7 +181,29 @@ public class JF_PerguntaAlternativa extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         pMA = new PerguntaAlternativa();
          
-         
+         if (textEnunciado.getText().equals("")) {
+            try {
+                throw new EnunciadoNaoInformadoException("Enunciado não pode estar vazio!");
+
+            } catch (EnunciadoNaoInformadoException ex) {
+
+                Logger.getLogger(JF_PerguntaAlternativa.class.getName()).log(Level.SEVERE, null, ex);
+                JOptionPane.showMessageDialog(this, ex, "Aviso", JOptionPane.WARNING_MESSAGE);
+            }
+        } else if (textAlternativa1.getText().equals("") && textAlternativa2.getText().equals("")
+                && textAlternativa3.getText().equals("") && textAlternativa4.getText().equals("")
+                && textAlternativa5.getText().equals("")) {
+            
+
+            try {
+                throw new AlternativasNaoInformadasException("Alternativas não informadas!");
+            } catch (AlternativasNaoInformadasException ex) {
+                Logger.getLogger(JF_PerguntaAlternativa.class.getName()).log(Level.SEVERE, null, ex);
+                 JOptionPane.showMessageDialog(this, ex, "Aviso", JOptionPane.WARNING_MESSAGE);
+            }
+
+        }
+        else {
         
            try {
            Formulario form = Formulario.getInstance();
@@ -208,7 +232,8 @@ public class JF_PerguntaAlternativa extends javax.swing.JFrame {
        }
         
         new CriarQuestoes().setVisible(true);
-        dispose();        // TODO add your handling code here:
+        dispose();
+        }        // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jRadioButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton3ActionPerformed
