@@ -199,8 +199,8 @@ public class JF_PerguntaAlternativa extends javax.swing.JFrame {
            pw.println(textAlternativa5.getText());
            pw.println(";");
            pw.flush();
-           pw.close();
-           save.close();
+          // pw.close();
+           //save.close();
           
            
        } catch (IOException ex) {

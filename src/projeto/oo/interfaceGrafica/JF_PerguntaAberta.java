@@ -122,8 +122,8 @@ public class JF_PerguntaAberta extends javax.swing.JFrame {
            pw.println(p.getTipo());
            pw.println(";");
            pw.flush();
-           pw.close();
-           save.close();
+          // pw.close();
+          // save.close();
            form.addPergunta(p);
            
        } catch (IOException ex) {

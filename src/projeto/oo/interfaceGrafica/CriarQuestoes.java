@@ -4,6 +4,12 @@
  * and open the template in the editor.
  */
 package projeto.oo.interfaceGrafica;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import projeto.oo.Formulario;
 import projeto.oo.Pergunta;
 /**
  *
@@ -144,8 +150,23 @@ public class CriarQuestoes extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
+            
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+          
+         try {
+           Formulario form = Formulario.getInstance();
+           FileWriter save = new FileWriter("formularios/"+form.getNomeFormulario()+".txt",true);
+           PrintWriter pw = new PrintWriter(save);
+           pw.println("$");
+           pw.flush();
+           pw.close();
+           save.close();
+          
+           
+       } catch (IOException ex) {
+          Logger.getLogger(Formulario.class.getName()).log(Level.SEVERE, null, ex); 
+       }
+        
         new Menu().setVisible(true);
         dispose();        
     }//GEN-LAST:event_jButton2ActionPerformed

@@ -131,8 +131,8 @@ public class JF_PerguntaOpcional extends javax.swing.JFrame {
            pw.println(pB.getTipo());
            pw.println(";");
            pw.flush();
-           pw.close();
-           save.close();
+          // pw.close();
+           //save.close();
           
            
        } catch (IOException ex) {

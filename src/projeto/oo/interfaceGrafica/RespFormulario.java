@@ -151,7 +151,13 @@ public class RespFormulario extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void txtFileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFileActionPerformed
-        // TODO add your handling code here:
+        
+        
+        
+        
+        
+        
+        
     }//GEN-LAST:event_txtFileActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
