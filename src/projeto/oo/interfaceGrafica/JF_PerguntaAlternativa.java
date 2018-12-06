@@ -83,6 +83,12 @@ public class JF_PerguntaAlternativa extends javax.swing.JFrame {
 
         jRadioButton5.setText("E");
 
+        textAlternativa1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textAlternativa1ActionPerformed(evt);
+            }
+        });
+
         textAlternativa2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 textAlternativa2ActionPerformed(evt);
@@ -216,6 +222,10 @@ public class JF_PerguntaAlternativa extends javax.swing.JFrame {
     private void textAlternativa4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textAlternativa4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_textAlternativa4ActionPerformed
+
+    private void textAlternativa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textAlternativa1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textAlternativa1ActionPerformed
 
     /**
      * @param args the command line arguments
