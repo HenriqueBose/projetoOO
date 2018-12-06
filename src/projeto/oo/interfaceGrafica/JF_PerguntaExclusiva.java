@@ -248,7 +248,7 @@ public class JF_PerguntaExclusiva extends javax.swing.JFrame {
            pA.addAlternativa(textAlternativa3.getText());
            pA.addAlternativa(textAlternativa4.getText());
            pA.addAlternativa(textAlternativa5.getText());
-          
+           
            pw.println(textAlternativa1.getText());
            pw.println(textAlternativa2.getText());
            pw.println(textAlternativa3.getText());

@@ -72,27 +72,6 @@ public class JF_PerguntaLista extends javax.swing.JFrame {
             }
         });
 
-<<<<<<< HEAD
-        textAlternativa1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textAlternativa1ActionPerformed(evt);
-            }
-        });
-
-        textAlternativa2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textAlternativa2ActionPerformed(evt);
-            }
-        });
-
-        textAlternativa3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textAlternativa3ActionPerformed(evt);
-            }
-        });
-
-=======
->>>>>>> 2a59f57fd229cdb9c9254e2d51abe62a77685551
         jLabel2.setText("A");
 
         jLabel3.setText("B");
@@ -215,14 +194,14 @@ public class JF_PerguntaLista extends javax.swing.JFrame {
            Formulario form = Formulario.getInstance();
            FileWriter save = new FileWriter("formularios/"+form.getNomeFormulario()+".txt",true);
            PrintWriter pw = new PrintWriter(save);
-           pw.println(pL.getTipo());
+            pw.println(pL.getTipo());
            pw.println(textEnunciado.getText());
            pL.addAlternativa(textAlternativa1.getText());
            pL.addAlternativa(textAlternativa2.getText());
            pL.addAlternativa(textAlternativa3.getText());
            pL.addAlternativa(textAlternativa4.getText());
            pL.addAlternativa(textAlternativa5.getText());
-           
+          
            pw.println(textAlternativa1.getText());
            pw.println(textAlternativa2.getText());
            pw.println(textAlternativa3.getText());
@@ -246,21 +225,6 @@ public class JF_PerguntaLista extends javax.swing.JFrame {
         dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
-<<<<<<< HEAD
-    private void textAlternativa3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textAlternativa3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textAlternativa3ActionPerformed
-
-    private void textAlternativa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textAlternativa1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textAlternativa1ActionPerformed
-
-    private void textAlternativa2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textAlternativa2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textAlternativa2ActionPerformed
-
-=======
->>>>>>> 2a59f57fd229cdb9c9254e2d51abe62a77685551
     /**
      * @param args the command line arguments
      */

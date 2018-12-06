@@ -216,7 +216,7 @@ public class JF_PerguntaAlternativa extends javax.swing.JFrame {
            pMA.addAlternativa(textAlternativa3.getText());
            pMA.addAlternativa(textAlternativa4.getText());
            pMA.addAlternativa(textAlternativa5.getText());
-          
+           
            pw.println(textAlternativa1.getText());
            pw.println(textAlternativa2.getText());
            pw.println(textAlternativa3.getText());
