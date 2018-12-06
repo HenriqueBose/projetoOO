@@ -73,6 +73,7 @@ public class JF_PerguntaLista extends javax.swing.JFrame {
         });
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         textAlternativa1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 textAlternativa1ActionPerformed(evt);
@@ -93,6 +94,8 @@ public class JF_PerguntaLista extends javax.swing.JFrame {
 
 =======
 >>>>>>> 2a59f57fd229cdb9c9254e2d51abe62a77685551
+=======
+>>>>>>> 5e0816bae03f1ed8d6afb5484ed7326a91be74ee
         jLabel2.setText("A");
 
         jLabel3.setText("B");
@@ -247,6 +250,7 @@ public class JF_PerguntaLista extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     private void textAlternativa3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textAlternativa3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_textAlternativa3ActionPerformed
@@ -261,6 +265,8 @@ public class JF_PerguntaLista extends javax.swing.JFrame {
 
 =======
 >>>>>>> 2a59f57fd229cdb9c9254e2d51abe62a77685551
+=======
+>>>>>>> 5e0816bae03f1ed8d6afb5484ed7326a91be74ee
     /**
      * @param args the command line arguments
      */
