@@ -115,10 +115,9 @@ public class Formulario {
                 isr = new FileReader(arquivo);
             BufferedReader br =new BufferedReader(isr);
             String s =br.readLine();
-            while(!"$".equals(s)){
+            while(s !=null){
                 System.out.println(s);
                 s = br.readLine();
-              
             }
             }catch (IOException ex) {
           Logger.getLogger(Formulario.class.getName()).log(Level.SEVERE, null, ex); 
@@ -126,7 +125,7 @@ public class Formulario {
         }
 
     
-        
+
    
 }
 
