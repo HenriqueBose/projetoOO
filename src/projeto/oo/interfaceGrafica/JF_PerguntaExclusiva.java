@@ -10,9 +10,12 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import projeto.oo.Formulario;
-import projeto.oo.PerguntaAberta;
+import projeto.oo.PerguntaAlternativa;
 import projeto.oo.PerguntaExclusiva;
+import projeto.oo.excecoes.AlternativasNaoInformadasException;
+import projeto.oo.excecoes.EnunciadoNaoInformadoException;
 
 /**
  *
@@ -197,7 +200,41 @@ public class JF_PerguntaExclusiva extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
     PerguntaExclusiva pA;
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       pA = new PerguntaExclusiva();
+        pA = new PerguntaExclusiva();
+       
+       
+       
+       
+       
+       
+          if (textEnunciado.getText().equals("")) {
+              
+            try {
+                throw new EnunciadoNaoInformadoException("Enunciado não pode estar vazio!");
+
+            } catch (EnunciadoNaoInformadoException ex) {
+
+                Logger.getLogger(JF_PerguntaExclusiva.class.getName()).log(Level.SEVERE, null, ex);
+                JOptionPane.showMessageDialog(this, ex, "Aviso", JOptionPane.WARNING_MESSAGE);
+            }
+            
+            
+        } else if 
+                
+                (textAlternativa1.getText().equals("") && textAlternativa2.getText().equals("")
+                && textAlternativa3.getText().equals("") && textAlternativa4.getText().equals("")
+                && textAlternativa5.getText().equals("")) {
+            
+
+            try {
+                throw new AlternativasNaoInformadasException("Alternativas não informadas!");
+            } catch (AlternativasNaoInformadasException ex) {
+                Logger.getLogger(JF_PerguntaExclusiva.class.getName()).log(Level.SEVERE, null, ex);
+                 JOptionPane.showMessageDialog(this, ex, "Aviso", JOptionPane.WARNING_MESSAGE);
+            }
+
+        }
+        else{
          
          
          try {
@@ -218,8 +255,8 @@ public class JF_PerguntaExclusiva extends javax.swing.JFrame {
            pw.println(textAlternativa5.getText());
            pw.println(";");
            pw.flush();
-           //pw.close();
-           //save.close();
+           pw.close();
+           save.close();
           
            
        } catch (IOException ex) {
@@ -232,6 +269,7 @@ public class JF_PerguntaExclusiva extends javax.swing.JFrame {
         
         new CriarQuestoes().setVisible(true);
         dispose();        // TODO add your handling code here:
+        }       // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void textAlternativa2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textAlternativa2ActionPerformed
