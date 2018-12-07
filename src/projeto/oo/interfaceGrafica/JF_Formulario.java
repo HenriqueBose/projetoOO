@@ -144,13 +144,13 @@ public class JF_Formulario extends javax.swing.JFrame {
             case 1:
                 new JF_RespAlternativa().setVisible(true);
                 break;
-            case 4:
+            case 2:
                 new JF_RespExclusiva().setVisible(true);
                 break;
             case 3:
                 new JF_RespLista().setVisible(true);
                 break;
-            case 2:
+            case 4:
                 new JF_RespOpcional().setVisible(true);
                 break;
             default:

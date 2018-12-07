@@ -23,7 +23,7 @@ public class PerguntaOpcional extends Alternativas {
     public PerguntaOpcional(){
       super.addAlternativa("Sim ");
       super.addAlternativa("Não ");
-       super.tipo = 2;
+       super.tipo = 4;
     }
     
     public int getResposta(){

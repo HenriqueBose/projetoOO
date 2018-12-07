@@ -193,7 +193,7 @@ public class JF_RespAlternativa extends javax.swing.JFrame {
                     new JF_RespAlternativa().setVisible(true);
                     dispose();
                     break;
-                case 4:
+                case 2:
                     new JF_RespExclusiva().setVisible(true);
                     dispose();
                     break;
@@ -201,7 +201,7 @@ public class JF_RespAlternativa extends javax.swing.JFrame {
                     new JF_RespLista().setVisible(true);
                     dispose();
                     break;
-                case 2:
+                case 4:
                     new JF_RespOpcional().setVisible(true);
                     dispose();
                     break;

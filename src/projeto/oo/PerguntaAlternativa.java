@@ -19,7 +19,7 @@ import java.util.logging.Logger;
 public class PerguntaAlternativa extends Alternativas{
    private ArrayList<Integer> selecionadas;
     public PerguntaAlternativa(){
-       super.tipo = 1;
+       super.tipo = 2;
         int i;
         this.selecionadas = new ArrayList<Integer>();
        for(i=0;i<super.conjuntoAlternativas.size();i++){
