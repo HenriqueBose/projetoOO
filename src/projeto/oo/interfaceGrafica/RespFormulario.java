@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import projeto.oo.Formulario;
 import projeto.oo.PerguntaAberta;
@@ -264,31 +265,31 @@ public class RespFormulario extends javax.swing.JFrame {
        }catch (IOException ex) {
            Logger.getLogger(Formulario.class.getName()).log(Level.SEVERE, null, ex); 
        }
-            for(int i =0;i<form1.perguntas.size();i++){
+            
        
-            if(form1.perguntas.get(i).getTipo() == 0){
+            if(form1.perguntas.get(Formulario.cont).getTipo() == 0){
                 
-               new JF_RespAberta().setVisible(true);
-               
+               new JF_RespAberta().setVisible(true);  
             }
-            else if(form1.perguntas.get(i).getTipo() == 1){
+            else if(form1.perguntas.get(Formulario.cont).getTipo() == 1){
                 
                new JF_RespAlternativa().setVisible(true);
             }
-            else if(form1.perguntas.get(i).getTipo() == 2){
+            else if(form1.perguntas.get(Formulario.cont).getTipo() == 2){
                 
-                new JF_RespExclusiva().setVisible(true);
+               new JF_RespExclusiva().setVisible(true);
             }
-            else if(form1.perguntas.get(i).getTipo() == 3){
+            else if(form1.perguntas.get(Formulario.cont).getTipo() == 3){
                 
                 new JF_RespLista().setVisible(true);
             }
-            else if(form1.perguntas.get(i).getTipo() == 4){
+            else if(form1.perguntas.get(Formulario.cont).getTipo() == 4){
                 
                 new JF_RespOpcional().setVisible(true);
             }
             
-            }
+            dispose();
+            JOptionPane.showMessageDialog(null, Formulario.cont);
             
         
     }//GEN-LAST:event_jButton2ActionPerformed

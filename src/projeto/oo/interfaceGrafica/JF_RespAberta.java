@@ -13,6 +13,7 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import projeto.oo.Formulario;
 import projeto.oo.PerguntaAberta;
@@ -124,10 +125,52 @@ public class JF_RespAberta extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
+    
+        Formulario form1;
+       
+    
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        
+                
+        form1 = Formulario.getInstance();
+         Formulario.Acrecont();
+         //JOptionPane.showMessageDialog(null, Formulario.cont);
+         if(Formulario.cont == form1.perguntas.size()){
+             Formulario.cont =0;
+             JOptionPane.showMessageDialog(null, "Todas as perguntas foram respondidas!");
+             new Menu().setVisible(true);
+             dispose();
+             
+         }
+         else{
+             
+         
+            switch (form1.perguntas.get(Formulario.cont).getTipo()) {
+                case 0:
+                    new JF_RespAberta().setVisible(true);
+                    dispose();
+                    break;
+                case 1:
+                    new JF_RespAlternativa().setVisible(true);
+                    dispose();
+                    break;
+                case 2:
+                    new JF_RespExclusiva().setVisible(true);
+                    dispose();
+                    break;
+                case 3:
+                    new JF_RespLista().setVisible(true);
+                    dispose();
+                    break;
+                case 4:
+                    new JF_RespOpcional().setVisible(true);
+                    dispose();
+                    break;
+                default:
+                    break;
+            }
+         }  
     }//GEN-LAST:event_jButton3ActionPerformed
 
     /**

@@ -5,6 +5,9 @@
  */
 package projeto.oo.interfaceGrafica;
 
+import javax.swing.JOptionPane;
+import projeto.oo.Formulario;
+
 /**
  *
  * @author Daniel1
@@ -170,10 +173,48 @@ public class JF_RespExclusiva extends javax.swing.JFrame {
     jPanel3.getAccessibleContext().setAccessibleDescription("");
 
     pack();
+    setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
+    Formulario form1;
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
+    form1 = Formulario.getInstance();
+         Formulario.Acrecont();
+         //JOptionPane.showMessageDialog(null, Formulario.cont);
+        if(Formulario.cont == form1.perguntas.size()){
+             
+             Formulario.cont =0;
+             JOptionPane.showMessageDialog(null, "Todas as perguntas foram respondidas!");
+             new Menu().setVisible(true);
+             dispose();
+         }
+         else{
+             
+         
+            switch (form1.perguntas.get(Formulario.cont).getTipo()) {
+                case 0:
+                    new JF_RespAberta().setVisible(true);
+                    dispose();
+                    break;
+                case 1:
+                    new JF_RespAlternativa().setVisible(true);
+                    dispose();
+                    break;
+                case 2:
+                    new JF_RespExclusiva().setVisible(true);
+                    dispose();
+                    break;
+                case 3:
+                    new JF_RespLista().setVisible(true);
+                    dispose();
+                    break;
+                case 4:
+                    new JF_RespOpcional().setVisible(true);
+                    dispose();
+                    break;
+                default:
+                    break;
+            }
+         }  
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jRadioButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton3ActionPerformed
@@ -229,30 +270,20 @@ public class JF_RespExclusiva extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JRadioButton jRadioButton3;
     private javax.swing.JRadioButton jRadioButton4;
     private javax.swing.JRadioButton jRadioButton5;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTextField textAlternativa1;
     private javax.swing.JTextField textAlternativa2;
     private javax.swing.JTextField textAlternativa3;
     private javax.swing.JTextField textAlternativa4;
     private javax.swing.JTextField textAlternativa5;
-    private javax.swing.JTextPane textEnunciado;
-    private javax.swing.JTextPane textEnunciado1;
     private javax.swing.JTextPane textEnunciado2;
     // End of variables declaration//GEN-END:variables
 }

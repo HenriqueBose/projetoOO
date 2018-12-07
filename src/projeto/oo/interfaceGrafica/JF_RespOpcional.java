@@ -5,6 +5,9 @@
  */
 package projeto.oo.interfaceGrafica;
 
+import javax.swing.JOptionPane;
+import projeto.oo.Formulario;
+
 /**
  *
  * @author Daniel1
@@ -102,10 +105,48 @@ public class JF_RespOpcional extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
+    Formulario form1;
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        
+        form1 = Formulario.getInstance();
+         Formulario.Acrecont();
+         //JOptionPane.showMessageDialog(null, Formulario.cont);
+       if(Formulario.cont == form1.perguntas.size()){
+             
+            Formulario.cont =0;
+             JOptionPane.showMessageDialog(null, "Todas as perguntas foram respondidas!");
+             new Menu().setVisible(true);
+             dispose();
+         }
+         else{
+             
+         
+            switch (form1.perguntas.get(Formulario.cont).getTipo()) {
+                case 0:
+                    new JF_RespAberta().setVisible(true);
+                    dispose();
+                    break;
+                case 1:
+                    new JF_RespAlternativa().setVisible(true);
+                    dispose();
+                    break;
+                case 2:
+                    new JF_RespExclusiva().setVisible(true);
+                    dispose();
+                    break;
+                case 3:
+                    new JF_RespLista().setVisible(true);
+                    dispose();
+                    break;
+                case 4:
+                    new JF_RespOpcional().setVisible(true);
+                    dispose();
+                    break;
+                default:
+                    break;
+            }
+         }  
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

@@ -125,8 +125,18 @@ public class Formulario {
        }
    }
 
+   //private static Formulario cont;
+   public static int cont = 0;
+   public static int Acrecont(){
+       
+       return cont++;
+       
+   }
     
-
+        
+            
+            
+        
    
 }
 

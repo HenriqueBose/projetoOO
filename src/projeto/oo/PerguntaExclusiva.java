@@ -24,7 +24,7 @@ public class PerguntaExclusiva extends Alternativas{
        for(i=0;i<super.conjuntoAlternativas.size();i++){
            this.selecionadas.add(i,0);
        }
-       super.tipo = 4;
+       super.tipo = 2;
         //Todas as posições são pre-des-selecionadas e são inicializadas como 0
         //Posições selecionadas são marcadas como 1
     }
