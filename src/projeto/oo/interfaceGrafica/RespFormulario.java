@@ -288,7 +288,7 @@ public class RespFormulario extends javax.swing.JFrame {
                 new JF_RespOpcional().setVisible(true);
             }
             
-            dispose();
+            
             JOptionPane.showMessageDialog(null, Formulario.cont);
             
         

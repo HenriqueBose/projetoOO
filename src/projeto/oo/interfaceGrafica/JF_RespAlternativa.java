@@ -177,7 +177,7 @@ public class JF_RespAlternativa extends javax.swing.JFrame {
          Formulario.Acrecont();
         // JOptionPane.showMessageDialog(null, Formulario.cont);
         if(Formulario.cont == form1.perguntas.size()){
-             Formulario.cont =0;
+             //Formulario.cont =0;
              JOptionPane.showMessageDialog(null, "Todas as perguntas foram respondidas!");
              new Menu().setVisible(true);
              dispose(); 
