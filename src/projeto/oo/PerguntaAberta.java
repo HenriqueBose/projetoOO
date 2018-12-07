@@ -18,8 +18,6 @@ import javax.swing.JOptionPane;
 public class PerguntaAberta extends Pergunta {
     private String resposta;
     
-    
-    
     public PerguntaAberta(){
        super.tipo = 0;
     }
@@ -44,7 +42,5 @@ public class PerguntaAberta extends Pergunta {
         }
     
     }
-
-  
     
 }
