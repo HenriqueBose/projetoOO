@@ -174,9 +174,9 @@ public class JF_PerguntaLista extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, ex, "Aviso", JOptionPane.WARNING_MESSAGE);
             }
         } else if
-                (textAlternativa1.getText().equals("") && textAlternativa2.getText().equals("")
-                && textAlternativa3.getText().equals("") && textAlternativa4.getText().equals("")
-                && textAlternativa5.getText().equals("")) {
+                (textAlternativa1.getText().equals("") || textAlternativa2.getText().equals("")
+                || textAlternativa3.getText().equals("") || textAlternativa4.getText().equals("")
+                || textAlternativa5.getText().equals("")) {
             
 
             try {
@@ -257,7 +257,7 @@ public class JF_PerguntaLista extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new JF_PerguntaLista().setVisible(true);
+                new CriarQuestoes().setVisible(true);
             }
         });
     }
