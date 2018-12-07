@@ -145,6 +145,8 @@ public class JF_RespOpcional extends javax.swing.JFrame {
                     break;
                 default:
                     break;
+                    
+                    
             }
          }  
     }//GEN-LAST:event_jButton1ActionPerformed

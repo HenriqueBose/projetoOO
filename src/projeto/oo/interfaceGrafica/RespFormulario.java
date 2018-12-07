@@ -288,8 +288,8 @@ public class RespFormulario extends javax.swing.JFrame {
                 new JF_RespOpcional().setVisible(true);
             }
             
-            
-            JOptionPane.showMessageDialog(null, Formulario.cont);
+            //JOptionPane.showMessageDialog(null, form1.perguntas.get(Formulario.cont).getTipo());
+            //JOptionPane.showMessageDialog(null, Formulario.cont);
             
         
     }//GEN-LAST:event_jButton2ActionPerformed

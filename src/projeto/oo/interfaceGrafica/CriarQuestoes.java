@@ -98,7 +98,12 @@ public class CriarQuestoes extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel2.setText("Adicionar questões");
 
-        cbPergunta.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Aberta", "Alternativa", "Opcional", "Lista", "Exclusiva" }));
+        cbPergunta.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Aberta", "Alternativa", "Exclusiva", "Lista", "Opcional" }));
+        cbPergunta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbPerguntaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -204,6 +209,10 @@ public class CriarQuestoes extends javax.swing.JFrame {
         
        
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void cbPerguntaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbPerguntaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbPerguntaActionPerformed
 
     /**
      * @param args the command line arguments
