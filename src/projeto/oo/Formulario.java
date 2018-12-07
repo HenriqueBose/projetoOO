@@ -30,7 +30,7 @@ public class Formulario {
           dataInicio, 
           dataFim;
    
-   ArrayList<Pergunta> perguntas;
+  public ArrayList<Pergunta> perguntas;
    
         private static Formulario instance;
        

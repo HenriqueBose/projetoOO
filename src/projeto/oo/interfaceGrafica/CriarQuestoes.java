@@ -157,7 +157,6 @@ public class CriarQuestoes extends javax.swing.JFrame {
            Formulario form = Formulario.getInstance();
            FileWriter save = new FileWriter("formularios/"+form.getNomeFormulario()+".txt",true);
            PrintWriter pw = new PrintWriter(save);
-           pw.println("$");
            pw.flush();
            pw.close();
            save.close();

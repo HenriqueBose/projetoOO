@@ -260,15 +260,39 @@ public class RespFormulario extends javax.swing.JFrame {
               }//Fim do switch
             }
            s = br.readLine();
-        }while(s!="$");
+        }while(s!=null);
        }catch (IOException ex) {
            Logger.getLogger(Formulario.class.getName()).log(Level.SEVERE, null, ex); 
        }
-        
-    
+            for(int i =0;i<form1.perguntas.size();i++){
+       
+            if(form1.perguntas.get(i).getTipo() == 0){
+                
+               new JF_RespAberta().setVisible(true);
+               
+            }
+            else if(form1.perguntas.get(i).getTipo() == 1){
+                
+               new JF_RespAlternativa().setVisible(true);
+            }
+            else if(form1.perguntas.get(i).getTipo() == 2){
+                
+                new JF_RespExclusiva().setVisible(true);
+            }
+            else if(form1.perguntas.get(i).getTipo() == 3){
+                
+                new JF_RespLista().setVisible(true);
+            }
+            else if(form1.perguntas.get(i).getTipo() == 4){
+                
+                new JF_RespOpcional().setVisible(true);
+            }
+            
+            }
+            
         
     }//GEN-LAST:event_jButton2ActionPerformed
-
+                
     /**
      * @param args the command line arguments
      */
