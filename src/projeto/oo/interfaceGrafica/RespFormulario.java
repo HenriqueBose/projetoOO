@@ -225,7 +225,7 @@ public class RespFormulario extends javax.swing.JFrame {
                      s = br.readLine(); // ; = lixo  
                       form1.addPergunta(u);
                        break;
-                 case 2:    //Pergunta Opcional
+                 case 4:    //Pergunta Opcional
                      PerguntaOpcional v = new PerguntaOpcional();
                      s = br.readLine();
                      v.setEnunciado(s);
@@ -247,7 +247,7 @@ public class RespFormulario extends javax.swing.JFrame {
                      s = br.readLine(); // ; = lixo 
                       form1.addPergunta(w);
                         break;
-                 case 4:    //Pergunta Exclusiva
+                 case 2:    //Pergunta Exclusiva
                      PerguntaExclusiva x = new PerguntaExclusiva();
                      s = br.readLine();
                      x.setEnunciado(s);
@@ -265,31 +265,18 @@ public class RespFormulario extends javax.swing.JFrame {
        }catch (IOException ex) {
            Logger.getLogger(Formulario.class.getName()).log(Level.SEVERE, null, ex); 
        }
-            
+     //  JF_Formulario novo;   
+      // novo = new JF_Formulario();
        
-            if(form1.perguntas.get(Formulario.cont).getTipo() == 0){
-                
-               new JF_RespAberta().setVisible(true);  
-            }
-            else if(form1.perguntas.get(Formulario.cont).getTipo() == 1){
-                
-               new JF_RespAlternativa().setVisible(true);
-            }
-            else if(form1.perguntas.get(Formulario.cont).getTipo() == 2){
-                
-               new JF_RespExclusiva().setVisible(true);
-            }
-            else if(form1.perguntas.get(Formulario.cont).getTipo() == 3){
-                
-                new JF_RespLista().setVisible(true);
-            }
-            else if(form1.perguntas.get(Formulario.cont).getTipo() == 4){
-                
-                new JF_RespOpcional().setVisible(true);
-            }
+     //  novo.formName.setText("Ola Mundo 2");
+       Formulario.cont = 0;
+       new JF_Formulario().setVisible(true);
+       dispose();
             
             //JOptionPane.showMessageDialog(null, form1.perguntas.get(Formulario.cont).getTipo());
             //JOptionPane.showMessageDialog(null, Formulario.cont);
+            
+      //dispose();
             
         
     }//GEN-LAST:event_jButton2ActionPerformed

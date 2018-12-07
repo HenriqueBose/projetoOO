@@ -13,7 +13,7 @@ import java.util.ArrayList;
  */
 public class Alternativas extends Pergunta {
     ArrayList<String> conjuntoAlternativas;
-    Alternativas(){
+    protected Alternativas(){
         conjuntoAlternativas = new ArrayList<String>();
     }
     
@@ -27,7 +27,7 @@ public class Alternativas extends Pergunta {
     }
     
     public String getAlternativa(int arg){
-         return this.conjuntoAlternativas.get(arg);
+         return conjuntoAlternativas.get(arg);
     }
     
     

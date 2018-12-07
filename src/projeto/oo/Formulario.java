@@ -31,7 +31,17 @@ public class Formulario {
           dataFim;
    
   public ArrayList<Pergunta> perguntas;
-   
+    public static int i =0;
+    //public static int AcreI(){
+      // return i++;
+   // }
+    
+  public String getAlternativas(int nq,int np){
+             
+      return perguntas.get(nq).getAlternativa(np);
+      
+  }
+  
         private static Formulario instance;
        
                 

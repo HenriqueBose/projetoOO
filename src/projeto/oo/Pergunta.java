@@ -18,6 +18,10 @@ import javax.swing.JOptionPane;
 public class Pergunta extends Formulario {
     
     private String enunciado;
+
+    /**
+     *
+     */
     protected int tipo;
 
     public void setEnunciado(String arg){
@@ -33,6 +37,18 @@ public class Pergunta extends Formulario {
     
      public void SalvarPergunta(PrintWriter pw){
             
+    }
+
+    String get(int i) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    String getAlternativas(int np) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    String getAlternativa(int np) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
  }
 

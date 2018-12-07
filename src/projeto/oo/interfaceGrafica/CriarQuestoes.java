@@ -155,9 +155,13 @@ public class CriarQuestoes extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-            
+            Formulario form1;
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+          form1 = Formulario.getInstance();
+          form1.perguntas.clear();
           
+          
+       
          try {
            Formulario form = Formulario.getInstance();
            FileWriter save = new FileWriter("formularios/"+form.getNomeFormulario()+".txt",true);
@@ -189,7 +193,7 @@ public class CriarQuestoes extends javax.swing.JFrame {
         dispose();
         break;
         case 2:
-        new JF_PerguntaOpcional().setVisible(true);
+        new JF_PerguntaExclusiva().setVisible(true);
         dispose();
         break;
         case 3:
@@ -197,7 +201,7 @@ public class CriarQuestoes extends javax.swing.JFrame {
         dispose();
         break;
         case 4:
-        new JF_PerguntaExclusiva().setVisible(true);
+        new JF_PerguntaOpcional().setVisible(true);
         dispose();
         break;
                             
