@@ -190,9 +190,9 @@ public class JF_PerguntaAlternativa extends javax.swing.JFrame {
                 Logger.getLogger(JF_PerguntaAlternativa.class.getName()).log(Level.SEVERE, null, ex);
                 JOptionPane.showMessageDialog(this, ex, "Aviso", JOptionPane.WARNING_MESSAGE);
             }
-        } else if (textAlternativa1.getText().equals("") && textAlternativa2.getText().equals("")
-                && textAlternativa3.getText().equals("") && textAlternativa4.getText().equals("")
-                && textAlternativa5.getText().equals("")) {
+        } else if (textAlternativa1.getText().equals("") || textAlternativa2.getText().equals("")
+                || textAlternativa3.getText().equals("") || textAlternativa4.getText().equals("")
+                || textAlternativa5.getText().equals("")) {
             
 
             try {

@@ -5,6 +5,21 @@
  */
 package projeto.oo.interfaceGrafica;
 
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JFileChooser;
+import javax.swing.filechooser.FileNameExtensionFilter;
+import projeto.oo.Formulario;
+import projeto.oo.PerguntaAberta;
+import projeto.oo.PerguntaAlternativa;
+import projeto.oo.PerguntaExclusiva;
+import projeto.oo.PerguntaLista;
+import projeto.oo.PerguntaOpcional;
 /**
  *
  * @author Daniel1
@@ -30,7 +45,7 @@ public class JF_RespAberta extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        Enunciado2 = new javax.swing.JTextPane();
+        EnunciadoAberta = new javax.swing.JTextPane();
         jButton3 = new javax.swing.JButton();
         jScrollPane4 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
@@ -43,7 +58,7 @@ public class JF_RespAberta extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel3.setText("Enunciado");
 
-        jScrollPane3.setViewportView(Enunciado2);
+        jScrollPane3.setViewportView(EnunciadoAberta);
 
         jButton3.setText("Responder");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -112,7 +127,7 @@ public class JF_RespAberta extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-       
+        
     }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
@@ -152,7 +167,7 @@ public class JF_RespAberta extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextPane Enunciado2;
+    private javax.swing.JTextPane EnunciadoAberta;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

@@ -106,7 +106,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTextPane" name="Enunciado2">
+            <Component class="javax.swing.JTextPane" name="EnunciadoAberta">
             </Component>
           </SubComponents>
         </Container>

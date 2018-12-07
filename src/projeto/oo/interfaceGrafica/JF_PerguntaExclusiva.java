@@ -221,9 +221,9 @@ public class JF_PerguntaExclusiva extends javax.swing.JFrame {
             
         } else if 
                 
-                (textAlternativa1.getText().equals("") && textAlternativa2.getText().equals("")
-                && textAlternativa3.getText().equals("") && textAlternativa4.getText().equals("")
-                && textAlternativa5.getText().equals("")) {
+                (textAlternativa1.getText().equals("") || textAlternativa2.getText().equals("")
+                || textAlternativa3.getText().equals("") || textAlternativa4.getText().equals("")
+                || textAlternativa5.getText().equals("")) {
             
 
             try {
